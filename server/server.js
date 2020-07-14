@@ -1,7 +1,8 @@
 const express = require('express'),
     morgan = require('morgan'),
     path = require('path'),
-    router = require('./routes');
+    router = require('./routes'),
+    helmet = require('helmet');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -14,6 +15,8 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, '../client/build')));
 // Provides great rout logging in our console for debugging
 app.use(morgan('dev'));
+//Helmet provides headers for HTTP security
+app.use(helmet());
 
 // Import the routing setup from our Router 
 app.use('/', router);
