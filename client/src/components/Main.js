@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Nav, Row, Col, Image } from "react-bootstrap";
+import { Button } from 'react-bootstrap';
 import styled from 'styled-components';
 
 function Main(props) {
@@ -28,19 +28,28 @@ function Main(props) {
     transition:0.5s;`
 
 
+
+
     return (
         <>
 
 
-            <Container classNam='container-fluid'>
+            <Container className='container-fluid text-center'>
                 <h1 className='text-center'>
                     <Welcome> Welcome </Welcome>
                     <To> to </To>
-                    <Breakout> Breakout! </Breakout>
+                    <Breakout> Exit Please! </Breakout>
                 </h1>
-                <p className='text-center font-weight-bold'>
+                <h3 className='text-center font-weight-bold text-primary'>
                     An interactive solo or team escape room style Web App!
-            </p>
+            </h3>
+                <br>
+                </br>
+                <h4 className='text-center font-weight-bold '>
+                    Press Start if you're ready to try and reach the exit!
+            </h4>
+
+                <Button className='btn button-primary font-weight-bold'>Start here!</Button>
             </Container>
         </>
 
