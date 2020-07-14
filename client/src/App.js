@@ -1,20 +1,22 @@
-import React, {useLayoutEffect, useState} from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 import './App.css';
 import axios from 'axios';
+import Routes from './router/router';
+import { useRoutes, usePath } from 'hookrouter';
 
-function App () {
-  const [randomStr, setRandomStr] = useState('');
-  useLayoutEffect(() => {
-    axios.get('/api/json')
-    .then(res => {
-      setRandomStr(res.data.test)
-    })
-  })
+
+function App() {
+  const routeResult = useRoutes(Routes);
+  const path = usePath();
+
   return (
-    <div>
-      {randomStr}
-    </div>
-  );
+
+    <>
+
+      {routeResult}
+    </>
+  )
+
 }
 
 export default App;
